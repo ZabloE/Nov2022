@@ -60,12 +60,7 @@ public class UserRegistrationController {
 	}
 	
 	
-	@RequestMapping("/login")
-	public String login()
-	{
-		return "login";
-	}
-	
+
 
 	
 	

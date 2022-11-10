@@ -15,7 +15,7 @@
 <p>Pievieno Pakalpojumus</p>
 
 
-<form th:action="@{/savePievPakalpojumu}" method="Post"  th:object="${pievieno_pakalpojumu}">
+<form th:action="@{/savePievPakalpojumu}"   method="Post"  th:object="${pievienopakalpojumu}">
 
 
 <label class="control-label" for="name"> Ievadi Pakalpojuma nosaukumu: </label>
@@ -24,7 +24,7 @@
 
 
 <label class="control-label" for="name"> Ievadi Pakalpojuma ilgumu </label>
-<input id="time" class="form-control" th:field="*{time}" required autofocus="autofocus" />
+<input id="laiks" class="form-control" th:field="*{time}" required autofocus="autofocus" />
 
 <button type="submit" class="btn btn-success">Saglabāt</button>
 

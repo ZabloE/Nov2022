@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import java.util.stream.Collectors;
 
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -21,7 +22,6 @@ import lv.venta.demo.services.UserService;
 import lv.venta.demo.web.dto.UserRegistrationDto;
 import lv.venta.demo.models.Role;
 @Service
-
 public class UserImplService implements UserService{
 
 	@Autowired
@@ -71,7 +71,7 @@ public class UserImplService implements UserService{
 
 
 	
-	
+
 	
 
 	

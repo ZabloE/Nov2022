@@ -13,7 +13,7 @@ public class PievienoPakalpojumuIMPLService implements PievienoPakalpojumuServic
 	@Autowired
 	IPievienoPakalpojumuRepo pakalpojumuRepo;
 	@Override
-	public void createUznemums(String name,  Double laiks) {
+	public void createPakalpojumu(String name,  Double laiks) {
 		PievienoPakalpojumu pievienoPakalpojumu = new PievienoPakalpojumu(name,laiks);
 		pakalpojumuRepo.save(pievienoPakalpojumu);
 		

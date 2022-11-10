@@ -4,6 +4,7 @@ package lv.venta.demo.services;
 
 
 
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import lv.venta.demo.models.User;
@@ -13,5 +14,5 @@ public interface UserService extends UserDetailsService{
 
 	User save (UserRegistrationDto registrationDto);
 
-	
+	UserDetails loadUserByUsername(String username);
 }

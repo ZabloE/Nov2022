@@ -1,7 +1,9 @@
 package lv.venta.demo.services;
 
+import lv.venta.demo.models.PievienoPakalpojumu;
+
 public interface PievienoPakalpojumuService {
 
 	
-	public void createUznemums(String name, Double laiks);
+	public void createPakalpojumu(String name, Double laiks);
 }

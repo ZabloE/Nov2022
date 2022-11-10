@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.mysql.cj.x.protobuf.MysqlxCrud.Collection;
 
 import lombok.Data;
 import lombok.Getter;
@@ -17,7 +18,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name= "pievienoPakalpojumu" )
+@Table(name= "pievienopakalpojumu" )
 @Setter
 @Getter
 @ToString
@@ -26,7 +27,6 @@ public class PievienoPakalpojumu {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
 	@Column(name="id_pievieno")
 	private Long id_pievieno;
 	
@@ -38,7 +38,7 @@ public class PievienoPakalpojumu {
 	
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name="id_uznemums")
+	@JoinColumn(name="id_uznemums", referencedColumnName = "id_uznemums",insertable = false, updatable = false)
 	private Uznemums uznemums;
 
 
@@ -46,6 +46,7 @@ public class PievienoPakalpojumu {
 		super();
 		this.name = name;
 		this.laiks = laiks;
+	
 		
 	}
 

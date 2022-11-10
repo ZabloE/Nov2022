@@ -1,5 +1,8 @@
 package lv.venta.demo.ImplService;
 
+import java.util.ArrayList;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,16 +18,22 @@ public class UznemumsIMPLService implements UznemumsService{
 	@Autowired
 	private IUznemumsRepo uznemumsRepo;
 	
+	@Autowired
+	private IUserRepo userRepo;
 	
 	@Override
-	public void createUznemums(String name, String adrese,User user) {
-		Uznemums uznemums = new Uznemums(name,adrese, user);
-		if(user == null) {
-			
-			System.out.print("aaaaaaa");
-		}
+	public void createUznemums(String name, String adrese,Long id) {
+		Uznemums uznemums = new Uznemums(name,adrese,id);
+		
+	
 		uznemumsRepo.save(uznemums);
 	}
+
+
+	
+	
+
+
 
 	
 	

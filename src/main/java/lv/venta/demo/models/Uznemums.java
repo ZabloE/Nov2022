@@ -8,6 +8,7 @@ import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -46,35 +47,52 @@ public class Uznemums {
 	
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
-	@JoinColumn(name="idUser", referencedColumnName = "idUser")
+	@JoinColumn(name="idUser", referencedColumnName = "idUser",insertable = false, updatable = false)
 	private User user;
 	
 	
 	
-	@OneToMany(mappedBy="id_pievieno")
+	@OneToMany(mappedBy="uznemums",  fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@ToString.Exclude
 	private Collection<PievienoPakalpojumu>pievienoPakalpojumu = new ArrayList<PievienoPakalpojumu>();
+
+
+	private Long idUser;
 	
 
 	
 
-	public Uznemums(String name, String adrese, User user) {
+	
+
+	@Override
+	public String toString() {
+		return "Uznemums [id_uznemums=" + id_uznemums + ", name=" + name + ", adrese=" + adrese + ", user=" + user
+				+  "]";
+	}
+
+	public Uznemums(String name, String adrese, Long id) {
 		super();
 		this.name = name;
 		this.adrese = adrese;
-		setUser(user);
+		this.id_uznemums = id;
+		
+		
 	}
 
 	public Uznemums() {
 	
 	}
 	
-public User getUser() {
-		return user;
+
+
+	
+
+	public Long getId_uznemums() {
+		return id_uznemums;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setId_uznemums(Long id_uznemums) {
+		this.id_uznemums = id_uznemums;
 	}
 
 	public String getName() {
@@ -93,7 +111,16 @@ public User getUser() {
 		this.adrese = adrese;
 	}
 	
+	public Long getIdUser()
+	{
+		return getIdUser();
+	}
 	
+	public void setIdUser(Long idUser)
+	{
+		
+		this.idUser = idUser;
+	}
 	
 	
 	

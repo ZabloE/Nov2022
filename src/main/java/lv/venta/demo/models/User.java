@@ -36,6 +36,13 @@ import lombok.ToString;
 public class User {
 
 	
+	@Override
+	public String toString() {
+		return "User [idUser=" + idUser + ", name=" + name + ", surname=" + surname + ", password=" + password
+				+ ", email=" + email + ", roles=" + roles + ", uznemums=" + uznemums + "]";
+	}
+
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="idUser")
